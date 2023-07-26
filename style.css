@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111827;
+}
+/* Hamburger icon styles */
+.burger-menu {
+  display: none; /* Hide the hamburger icon by default on larger screens */
+  cursor: pointer;
+  position: relative;
+  z-index: 2; /* Ensure the hamburger icon is above the checkbox */
+}
+
+.burger-menu img {
+  width: 30px; /* Adjust the size as needed */
+}
+
+/* Checkbox to show/hide */
+#toggle {
+  display: none; /* Hide the checkbox by default */
+}
+/* navbar for large screen */
+.navbar {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 45px;
+  margin-right: 40px;
+  position: fixed; /* Fix the navbar at the top of the page */
+  top: 0; /* Position it at the top */
+  left: 0; /* Align it to the left edge */
+  right: 0; /* Align it to the right edge */
+  background-color: #111827; /* Add a background color */
+  padding: 10px 20px; /* Add padding for better visibility */
+  z-index: 1; /* Ensure the navbar is above other content */
+}
+.navbar li {
+  list-style: none;
+}
+.navbar li a {
+  text-decoration: none;
+  color: azure;
+  font-weight: 500;
+  font-size: 1em;
+}
+.navbar li a:hover {
+  color: aqua;
+}
+#Home {
+  background-color: #6a6ae1;
+  padding: 4px 6px;
+  border-radius: 100% /80px;
+}
+/* Hero-section */
+.Hero-Section {
+  margin: 40px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+/* left-hero-section */
+.left-hero-section {
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  gap: 25px;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.left-hero-section h1 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: azure;
+}
+.waving-hand-img {
+  height: 25px;
+  width: 25px;
+}
+.left-hero-section p {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #a2a44e;
+}
+/* right-hero-section */
+.right-hero-section {
+  display: flex;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+}
+.pc-image {
+  height: 500px;
+  width: 500px;
+}
+
+/* project-section */
+.project-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.project-head {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem;
+
+  color: azure;
+}
+.project-img {
+  height: 200px;
+  width: 200px;
+}
+.project {
+  display: grid;
+}
+.heading-line {
+  border-bottom: 5px solid #0101f3;
+  width: 18vw;
+  border-radius: 12.5%;
+}
+/* footer-section */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer h2 {
+  font-weight: 900;
+  font-size: 2rem;
+  color: azure;
+  line-height: 1;
+}
+.footer-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.footer-img {
+  height: 50px;
+  width: 50px;
+}
+.project-img:hover {
+  cursor: pointer;
+}
+/* Media query to show/hide the hamburger icon on smaller screens */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block; /* Show the hamburger icon on smaller screens */
+  }
+  /* Hide the regular navigation links on smaller screens */
+  .navbar {
+    display: none;
+    transition: opacity 0.3s ease; /* Add transition for smooth appearance */
+  }
+
+  /* Show the navigation links when the hamburger icon is checked */
+  #toggle:checked + .navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #111827; /* You can adjust the background color as needed */
+    /* padding: 10px; */
+    opacity: 1; /* Ensure the navbar becomes visible when checked */
+    transition: opacity 0.3s ease; /* Add transition for smooth disappearance */
+  }
+  #toggle:checked + .navbar li {
+    margin: 0;
+  }
+  #toggle:checked + .navbar li a {
+    color: azure;
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  #toggle:checked + .navbar li a:hover {
+    color: aqua;
+    cursor: pointer;
+  }
+  /* hero-section */
+  .Hero-Section {
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-hero-section h1 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+  .pc-image {
+    height: 200px;
+    width: 200px;
+  }
+  /* project-section */
+  .project-img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .heading-line {
+    width: 50vw; /* Adjust the width as needed for smaller screens */
+  }
+}
+@media screen and (min-width: 768px) {
+  .burger-menu {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+  }
+
+  .heading-line {
+    width: 18vw; /* Adjust the width as needed for larger screens */
+  }
+  .project {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
